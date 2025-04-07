@@ -26,9 +26,9 @@ jobs:
 
       - name: Verify installation
         run: |
-          mkdir -p helmhome
-          make install HELM_HOME=helmhome
-          helmhome/plugins/helm-set-status/bin/helm-set-status version
+          mkdir -p helmplugindir
+          make install HELM_3_PLUGINS=helmplugindir
+          helmplugindir/helm-set-status/bin/helm-set-status version
 
   helm-install:
     name: helm install
