@@ -2,10 +2,10 @@ name: Lint sh
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths: ['install-binary.sh']
   pull_request:
-    branches: [master]
+    branches: [main]
     paths: ['install-binary.sh']
 
 jobs:
