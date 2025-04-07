@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"os"
 
@@ -20,7 +21,10 @@ func NewRootCmd(out io.Writer, args []string) *cobra.Command {
 		SilenceUsage: true,
 		Args: func(cmd *cobra.Command, args []string) error {
 			if len(args) == 0 {
-				cmd.Help()
+				err := cmd.Help()
+				if err != nil {
+					fmt.Println("Unable to print help information")
+				}
 				os.Exit(1)
 			} else if len(args) != 2 {
 				return errors.New("release and status must be specified")
@@ -30,7 +34,10 @@ func NewRootCmd(out io.Writer, args []string) *cobra.Command {
 		RunE: runSetStatus,
 	}
 	flags := cmd.PersistentFlags()
-	flags.Parse(args)
+	err := flags.Parse(args)
+	if err != nil {
+		fmt.Println("Failed to parse arguments!")
+	}
 	settings = new(EnvSettings)
 	settings.AddFlags(flags)
 
