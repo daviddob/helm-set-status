@@ -75,6 +75,7 @@ func SetStatus(helmOptions common.HelmOptions, kubeConfig common.KubeConfig) err
 
 func main() {
 	setStatusCmd := NewRootCmd(os.Stdout, os.Args[1:])
+	setStatusCmd.AddCommand(newVersionCmd())
 
 	if err := setStatusCmd.Execute(); err != nil {
 		os.Exit(1)
