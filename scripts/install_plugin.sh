@@ -93,7 +93,7 @@ getDownloadURL() {
   fi
 }
 
-# Temporary dir
+# Temporary dir.
 mkTempDir() {
   HELM_TMP="$(mktemp -d -t "${PROJECT_NAME}-XXXXXX")"
 }
