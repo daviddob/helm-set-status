@@ -3,14 +3,14 @@ name: Lint sh
 on:
   push:
     branches: [main]
-    paths: ['install-binary.sh']
+    paths: ['scripts/install_plugin.sh']
   pull_request:
     branches: [main]
-    paths: ['install-binary.sh']
+    paths: ['scripts/install_plugin.sh']
 
 jobs:
   lint-sh:
-    name: Lint install-binary.sh
+    name: Lint scripts/install_plugin.sh
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     continue-on-error: true
