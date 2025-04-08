@@ -3,7 +3,7 @@
 # Shamelessly copied from https://github.com/technosophos/helm-template
 
 PROJECT_NAME="helm-set-status"
-PROJECT_GH="daviddob/helm-set-status"
+PROJECT_GH="k3s-io/helm-set-status"
 export GREP_COLOR="never"
 
 # Convert HELM_BIN and HELM_PLUGIN_DIR to unix if cygpath is
