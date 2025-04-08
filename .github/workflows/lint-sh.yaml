@@ -13,7 +13,6 @@ jobs:
     name: Lint scripts/install_plugin.sh
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: luizm/action-sh-checker@v0.9.0
