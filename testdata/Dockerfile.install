@@ -25,12 +25,8 @@ WORKDIR /workspace
 
 # See "From Apt (Debian/Ubuntu)" at https://helm.sh/docs/intro/install/
 RUN apt-get update && \
-    apt-get install curl && \
-    curl https://helm.baltorepo.com/organization/signing.asc | sudo apt-key add - && \
-    apt-get install apt-transport-https --yes && \
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list && \
-    apt-get update && \
-    apt-get install helm
+    apt-get install -y curl && \
+    curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 RUN helm plugin install .
 RUN helm version -c
