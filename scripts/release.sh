@@ -3,8 +3,8 @@ set -e
 
 # == would end up with: scripts/release.sh: 5: [: v3.8.1: unexpected operator
 if [ "$1" = "" ]; then
-  echo usage: "$0 VERSION"
-  exit 1
+	echo usage: "$0 VERSION"
+	exit 1
 fi
 
 git tag $1
