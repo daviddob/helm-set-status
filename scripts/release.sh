@@ -7,6 +7,6 @@ if [ "$1" = "" ]; then
 	exit 1
 fi
 
-git tag $1
-git push origin $1
-gh release create $1 --draft --generate-notes --title "$1" release/*.tgz
+git tag "$1"
+git push origin "$1"
+gh release create "$1" --draft --generate-notes --title "$1" release/*.tgz

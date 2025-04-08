@@ -138,7 +138,7 @@ exit_trap() {
 	rmTempDir
 	if [ "$result" != "0" ]; then
 		echo "Failed to install $PROJECT_NAME"
-		printf "\tFor support, go to https://github.com/${PROJECT_GH}.\n"
+		printf "\tFor support, go to https://github.com/%s.\n" "$PROJECT_GH"
 	fi
 	exit $result
 }
